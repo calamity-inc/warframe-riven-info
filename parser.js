@@ -26,6 +26,10 @@ function addStat(stats, tag, value) {
     stats.push({ tag, value, displayValue });
 }
 
+function toTitleCase(word) {
+    return word.charAt(0).toUpperCase() + word.substr(1);
+}
+
 function parseRiven(
     rivenType, // the part after /Lotus/Upgrades/Mods/Randomized/
     fingerprint,
@@ -60,7 +64,24 @@ function parseRiven(
         addStat(stats, curse.Tag, upgradeValue);
     }
 
-    return stats;
+    let name = "";
+    fingerprint.buffs.sort((a, b) => b.Value - a.Value);
+    for (const buff of fingerprint.buffs) {
+        if (buff.Tag == fingerprint.buffs[fingerprint.buffs.length - 1].Tag) {
+            name += riven_tags[rivenType].find(x => x.tag == buff.Tag).suffix;
+        }
+        else if (buff.Tag == fingerprint.buffs[1].Tag) {
+            name += riven_tags[rivenType].find(x => x.tag == buff.Tag).prefix;
+        }
+        else if (buff.Tag == fingerprint.buffs[0].Tag) {
+            name += toTitleCase(riven_tags[rivenType].find(x => x.tag == buff.Tag).prefix);
+            if (fingerprint.buffs.length > 2) {
+                name += "-";
+            }
+        }
+    }
+
+    return { stats, name };
 }
 
 module.exports = { parseRiven };
