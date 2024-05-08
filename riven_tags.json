@@ -1,0 +1,676 @@
+{
+    "LotusArchgunRandomModRare": [
+        {
+            "tag": "WeaponArmorPiercingDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponCritChanceMod",
+            "value": 0.0111
+        },
+        {
+            "tag": "WeaponCritDamageMod",
+            "value": 0.0089
+        },
+        {
+            "tag": "WeaponElectricityDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponFireDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponFireRateMod",
+            "value": 0.00667
+        },
+        {
+            "tag": "WeaponFreezeDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponImpactDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponProcTimeMod",
+            "value": 0.01111
+        },
+        {
+            "tag": "WeaponSlashDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponStunChanceMod",
+            "value": 0.0067
+        },
+        {
+            "tag": "WeaponToxinDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponAmmoMaxMod",
+            "value": 0.0111
+        },
+        {
+            "tag": "WeaponClipMaxMod",
+            "value": 0.0067
+        },
+        {
+            "tag": "WeaponDamageAmountMod",
+            "value": 0.0111
+        },
+        {
+            "tag": "WeaponFireIterationsMod",
+            "value": 0.0067
+        },
+        {
+            "tag": "WeaponPunctureDepthMod",
+            "value": 0.03
+        },
+        {
+            "tag": "WeaponRecoilReductionMod",
+            "value": -0.01
+        },
+        {
+            "tag": "WeaponReloadSpeedMod",
+            "value": 0.0111
+        },
+        {
+            "tag": "WeaponFactionDamageCorpus",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponFactionDamageGrineer",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponZoomFovMod",
+            "value": 0.006666
+        }
+    ],
+    "LotusModularMeleeRandomModRare": [
+        {
+            "tag": "WeaponMeleeDamageMod",
+            "value": 0.0183
+        },
+        {
+            "tag": "WeaponArmorPiercingDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponImpactDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponSlashDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponCritChanceMod",
+            "value": 0.02
+        },
+        {
+            "tag": "WeaponCritDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponElectricityDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFireDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFreezeDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponToxinDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponProcTimeMod",
+            "value": 0.01111
+        },
+        {
+            "tag": "WeaponMeleeFactionDamageCorpus",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponMeleeFactionDamageGrineer",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponMeleeFactionDamageInfested",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponFireRateMod",
+            "value": 0.0061
+        },
+        {
+            "tag": "WeaponStunChanceMod",
+            "value": 0.01
+        },
+        {
+            "tag": "ComboDurationMod",
+            "value": 0.09
+        },
+        {
+            "tag": "SlideAttackCritChanceMod",
+            "value": 0.013334
+        },
+        {
+            "tag": "WeaponMeleeRangeIncMod",
+            "value": 0.02158
+        },
+        {
+            "tag": "WeaponMeleeFinisherDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponMeleeComboEfficiencyMod",
+            "value": 0.00816
+        },
+        {
+            "tag": "WeaponMeleeComboInitialBonusMod",
+            "value": 0.27224
+        },
+        {
+            "tag": "WeaponMeleeComboPointsOnHitMod",
+            "value": -0.01165
+        },
+        {
+            "tag": "WeaponMeleeComboBonusOnHitMod",
+            "value": 0.00653
+        }
+    ],
+    "LotusModularPistolRandomModRare": [
+        {
+            "tag": "WeaponArmorPiercingDamageMod",
+            "value": 0.01333
+        },
+        {
+            "tag": "WeaponCritChanceMod",
+            "value": 0.016666
+        },
+        {
+            "tag": "WeaponCritDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponElectricityDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFireDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFireRateMod",
+            "value": 0.0083
+        },
+        {
+            "tag": "WeaponFreezeDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponImpactDamageMod",
+            "value": 0.013333
+        },
+        {
+            "tag": "WeaponProcTimeMod",
+            "value": 0.01111
+        },
+        {
+            "tag": "WeaponSlashDamageMod",
+            "value": 0.013333
+        },
+        {
+            "tag": "WeaponStunChanceMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponToxinDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponAmmoMaxMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponClipMaxMod",
+            "value": 0.005555
+        },
+        {
+            "tag": "WeaponDamageAmountMod",
+            "value": 0.0244
+        },
+        {
+            "tag": "WeaponFireIterationsMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponProjectileSpeedMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponPunctureDepthMod",
+            "value": 0.03
+        },
+        {
+            "tag": "WeaponRecoilReductionMod",
+            "value": -0.01
+        },
+        {
+            "tag": "WeaponReloadSpeedMod",
+            "value": 0.005555
+        },
+        {
+            "tag": "WeaponFactionDamageCorpus",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponFactionDamageGrineer",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponFactionDamageInfested",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponZoomFovMod",
+            "value": 0.0089
+        }
+    ],
+    "LotusPistolRandomModRare": [
+        {
+            "tag": "WeaponArmorPiercingDamageMod",
+            "value": 0.01333
+        },
+        {
+            "tag": "WeaponCritChanceMod",
+            "value": 0.016666
+        },
+        {
+            "tag": "WeaponCritDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponElectricityDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFireDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFireRateMod",
+            "value": 0.0083
+        },
+        {
+            "tag": "WeaponFreezeDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponImpactDamageMod",
+            "value": 0.013333
+        },
+        {
+            "tag": "WeaponProcTimeMod",
+            "value": 0.01111
+        },
+        {
+            "tag": "WeaponSlashDamageMod",
+            "value": 0.013333
+        },
+        {
+            "tag": "WeaponStunChanceMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponToxinDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponAmmoMaxMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponClipMaxMod",
+            "value": 0.005555
+        },
+        {
+            "tag": "WeaponDamageAmountMod",
+            "value": 0.0244
+        },
+        {
+            "tag": "WeaponFireIterationsMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponProjectileSpeedMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponPunctureDepthMod",
+            "value": 0.03
+        },
+        {
+            "tag": "WeaponRecoilReductionMod",
+            "value": -0.01
+        },
+        {
+            "tag": "WeaponReloadSpeedMod",
+            "value": 0.005555
+        },
+        {
+            "tag": "WeaponFactionDamageCorpus",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponFactionDamageGrineer",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponFactionDamageInfested",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponZoomFovMod",
+            "value": 0.0089
+        }
+    ],
+    "LotusRifleRandomModRare": [
+        {
+            "tag": "WeaponArmorPiercingDamageMod",
+            "value": 0.01333
+        },
+        {
+            "tag": "WeaponCritChanceMod",
+            "value": 0.016666
+        },
+        {
+            "tag": "WeaponCritDamageMod",
+            "value": 0.013333
+        },
+        {
+            "tag": "WeaponElectricityDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFireDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFireRateMod",
+            "value": 0.00667
+        },
+        {
+            "tag": "WeaponFreezeDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponImpactDamageMod",
+            "value": 0.013333
+        },
+        {
+            "tag": "WeaponProcTimeMod",
+            "value": 0.01111
+        },
+        {
+            "tag": "WeaponSlashDamageMod",
+            "value": 0.013333
+        },
+        {
+            "tag": "WeaponStunChanceMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponToxinDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponAmmoMaxMod",
+            "value": 0.00555
+        },
+        {
+            "tag": "WeaponClipMaxMod",
+            "value": 0.005555
+        },
+        {
+            "tag": "WeaponDamageAmountMod",
+            "value": 0.018333
+        },
+        {
+            "tag": "WeaponFireIterationsMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponProjectileSpeedMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponPunctureDepthMod",
+            "value": 0.03
+        },
+        {
+            "tag": "WeaponRecoilReductionMod",
+            "value": -0.01
+        },
+        {
+            "tag": "WeaponReloadSpeedMod",
+            "value": 0.005555
+        },
+        {
+            "tag": "WeaponFactionDamageCorpus",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponFactionDamageGrineer",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponFactionDamageInfested",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponZoomFovMod",
+            "value": 0.006666
+        }
+    ],
+    "LotusShotgunRandomModRare": [
+        {
+            "tag": "WeaponArmorPiercingDamageMod",
+            "value": 0.01333
+        },
+        {
+            "tag": "WeaponCritChanceMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponCritDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponElectricityDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFireDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFireRateMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFreezeDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponImpactDamageMod",
+            "value": 0.013333
+        },
+        {
+            "tag": "WeaponProcTimeMod",
+            "value": 0.01111
+        },
+        {
+            "tag": "WeaponSlashDamageMod",
+            "value": 0.013333
+        },
+        {
+            "tag": "WeaponStunChanceMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponToxinDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponAmmoMaxMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponClipMaxMod",
+            "value": 0.005555
+        },
+        {
+            "tag": "WeaponDamageAmountMod",
+            "value": 0.0183
+        },
+        {
+            "tag": "WeaponFireIterationsMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponProjectileSpeedMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponPunctureDepthMod",
+            "value": 0.03
+        },
+        {
+            "tag": "WeaponRecoilReductionMod",
+            "value": -0.01
+        },
+        {
+            "tag": "WeaponReloadSpeedMod",
+            "value": 0.005555
+        },
+        {
+            "tag": "WeaponFactionDamageCorpus",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponFactionDamageGrineer",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponFactionDamageInfested",
+            "value": 0.005
+        }
+    ],
+    "PlayerMeleeWeaponRandomModRare": [
+        {
+            "tag": "WeaponMeleeDamageMod",
+            "value": 0.0183
+        },
+        {
+            "tag": "WeaponArmorPiercingDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponImpactDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponSlashDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponCritChanceMod",
+            "value": 0.02
+        },
+        {
+            "tag": "WeaponCritDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponElectricityDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFireDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponFreezeDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponToxinDamageMod",
+            "value": 0.01
+        },
+        {
+            "tag": "WeaponProcTimeMod",
+            "value": 0.01111
+        },
+        {
+            "tag": "WeaponMeleeFactionDamageCorpus",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponMeleeFactionDamageGrineer",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponMeleeFactionDamageInfested",
+            "value": 0.005
+        },
+        {
+            "tag": "WeaponFireRateMod",
+            "value": 0.0061
+        },
+        {
+            "tag": "WeaponStunChanceMod",
+            "value": 0.01
+        },
+        {
+            "tag": "ComboDurationMod",
+            "value": 0.09
+        },
+        {
+            "tag": "SlideAttackCritChanceMod",
+            "value": 0.013334
+        },
+        {
+            "tag": "WeaponMeleeRangeIncMod",
+            "value": 0.02158
+        },
+        {
+            "tag": "WeaponMeleeFinisherDamageMod",
+            "value": 0.0133
+        },
+        {
+            "tag": "WeaponMeleeComboEfficiencyMod",
+            "value": 0.00816
+        },
+        {
+            "tag": "WeaponMeleeComboInitialBonusMod",
+            "value": 0.27224
+        },
+        {
+            "tag": "WeaponMeleeComboPointsOnHitMod",
+            "value": -0.01165
+        },
+        {
+            "tag": "WeaponMeleeComboBonusOnHitMod",
+            "value": 0.00653
+        }
+    ]
+}
