@@ -71,3 +71,12 @@ function assert(bool) {
     assert(stats[1].tag == "WeaponFireRateMod");
     assert(stats[1].displayValue == 42.5);
 }
+
+{
+    const { name } = parseRiven(
+        "PlayerMeleeWeaponRandomModRare",
+        JSON.parse("{\"compat\":\"/Lotus/Weapons/Tenno/Melee/Glaives/LightGlaive/LightGlaiveWeapon\",\"lim\":0,\"lvlReq\":0,\"lvl\":8,\"rerolls\":69420,\"pol\":\"AP_DEFENSE\",\"buffs\":[{\"Tag\":\"WeaponFireRateMod\",\"Value\":0},{\"Tag\":\"WeaponMeleeDamageMod\",\"Value\":1073741823}],\"curses\":[{\"Tag\":\"WeaponSlashDamageMod\",\"Value\":1073741823}]}"),
+        1
+    );
+    assert(name == "Visidra");
+}
