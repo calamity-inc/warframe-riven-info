@@ -1010,6 +1010,10 @@ function rivenIntToFloat(i) {
     return 0.0;
 }
 
+function floatToRivenInt(f) {
+    return f * 0x3FFFFFFF;
+}
+
 function lerp(a, b, t) {
     return (a + (b - a) * t);
 }
@@ -1017,15 +1021,18 @@ function lerp(a, b, t) {
 const numBuffsAtten = [0, 1, .66000003, .5, .40000001, .34999999];
 const numBuffsCurseAtten = [0, 1, .33000001, .5, 1.25, 1.5];
 
-function addStat(stats, tag, value) {
-    let displayValue;
+function valueToDisplayValue(tag, value) {
     if (tag == "WeaponMeleeComboInitialBonusMod") {
-        displayValue = Math.round(value * 10) / 10;
+        return Math.round(value * 10) / 10;
     }
-    else {
-        displayValue = Math.round(value * 1000) / 10;
+    return Math.round(value * 1000) / 10;
+}
+
+function displayValueToValue(tag, displayValue) {
+    if (tag == "WeaponMeleeComboInitialBonusMod") {
+        return displayValue;
     }
-    stats.push({ tag, value, displayValue });
+    return displayValue / 100;
 }
 
 function toTitleCase(word) {
@@ -1053,7 +1060,11 @@ function parseRiven(
         upgradeValue *= lerp(0.9, 1.1, rivenIntToFloat(buff.Value));
         upgradeValue *= numBuffsAtten[Math.min(fingerprint.buffs.length, numBuffsAtten.length - 1)];
         upgradeValue *= fingerprint.lvl + 1;
-        addStat(stats, buff.Tag, upgradeValue);
+        stats.push({
+            tag: buff.Tag,
+            value: upgradeValue,
+            displayValue: valueToDisplayValue(buff.Tag, upgradeValue)
+        });
     }
 
     for (const curse of fingerprint.curses) {
@@ -1063,7 +1074,11 @@ function parseRiven(
         upgradeValue *= numBuffsCurseAtten[Math.min(fingerprint.buffs.length, numBuffsCurseAtten.length - 1)];
         upgradeValue *= numBuffsAtten[Math.min(fingerprint.curses.length, numBuffsAtten.length - 1)];
         upgradeValue *= fingerprint.lvl + 1;
-        addStat(stats, curse.Tag, upgradeValue);
+        stats.push({
+            tag: curse.Tag,
+            value: upgradeValue,
+            displayValue: valueToDisplayValue(curse.Tag, upgradeValue)
+        });
     }
 
     let name = "";
@@ -1086,7 +1101,55 @@ function parseRiven(
     return { stats, name };
 }
 
-const RivenParser = { riven_tags, parseRiven };
+function unparseBuff(rivenType, omegaAttenuation, lvl, numBuffs, numCurses, tag, value) {
+    const curseAtten = Math.pow(1.25, numCurses);
+
+    let attenuation = 1;
+    attenuation *= 1.5; // SPECIFIC_FIT_ATTENUATION
+    attenuation *= omegaAttenuation;
+    attenuation *= 10; // getBaseDrain(RIVEN_BASE_DRAIN)
+
+    value /= lvl + 1;
+    value /= numBuffsAtten[Math.min(numBuffs, numBuffsAtten.length - 1)];
+    value /= curseAtten;
+    value /= attenuation;
+    value /= riven_tags[rivenType].find(x => x.tag == tag).value;
+
+    value -= 0.9; // 0.9..1.1 -> 0.0..0.2
+    value /= 0.2; // 0.0..0.2 -> 0.0..1.0
+
+    return value;
+}
+
+function unparseCurse(rivenType, omegaAttenuation, lvl, numBuffs, numCurses, tag, value) {
+    let attenuation = 1;
+    attenuation *= 1.5; // SPECIFIC_FIT_ATTENUATION
+    attenuation *= omegaAttenuation;
+    attenuation *= 10; // getBaseDrain(RIVEN_BASE_DRAIN)
+
+    value /= lvl + 1;
+    value /= numBuffsAtten[Math.min(numCurses, numBuffsAtten.length - 1)];
+    value /= numBuffsCurseAtten[Math.min(numBuffs, numBuffsCurseAtten.length - 1)];
+    value /= attenuation;
+    value /= riven_tags[rivenType].find(x => x.tag == tag).value;
+    value /= -1.0;
+
+    value -= 0.9; // 0.9..1.1 -> 0.0..0.2
+    value /= 0.2; // 0.0..0.2 -> 0.0..1.0
+
+    return value;
+}
+
+const RivenParser = {
+    riven_tags,
+    rivenIntToFloat,
+    floatToRivenInt,
+    valueToDisplayValue,
+    displayValueToValue,
+    parseRiven,
+    unparseBuff,
+    unparseCurse
+};
 if (typeof module != "undefined") {
     module.exports = RivenParser;
 }
