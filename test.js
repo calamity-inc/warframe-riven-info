@@ -80,3 +80,21 @@ function assert(bool) {
     );
     assert(name == "Visidra");
 }
+
+{
+    const { name } = parseRiven(
+        "PlayerMeleeWeaponRandomModRare",
+        JSON.parse("{\"compat\":\"/Lotus/Weapons/Tenno/Melee/PlayerMeleeWeapon\",\"lim\":0,\"lvl\":8,\"lvlReq\":0,\"rerolls\":1337,\"pol\":\"AP_ANY\",\"buffs\":[{\"Tag\":\"WeaponCritDamageMod\",\"Value\":1073741823},{\"Tag\":\"WeaponCritChanceMod\",\"Value\":1073741823},{\"Tag\":\"WeaponMeleeDamageMod\",\"Value\":536870912},{\"Tag\":\"WeaponArmorPiercingDamageMod\",\"Value\":536870912},{\"Tag\":\"WeaponImpactDamageMod\",\"Value\":536870912}],\"curses\":[]}"),
+        1
+    );
+    assert(name == "Crita-acri-visi-insiton");
+}
+
+{
+    const { name } = parseRiven(
+        "PlayerMeleeWeaponRandomModRare",
+        JSON.parse("{\"compat\":\"/Lotus/Weapons/Tenno/Melee/PlayerMeleeWeapon\",\"lim\":0,\"lvl\":8,\"lvlReq\":0,\"rerolls\":1337,\"pol\":\"AP_ANY\",\"buffs\":[{\"Tag\":\"WeaponCritDamageMod\",\"Value\":1073741823},{\"Tag\":\"WeaponCritDamageMod\",\"Value\":1073741823},{\"Tag\":\"WeaponCritChanceMod\",\"Value\":1073741823},{\"Tag\":\"WeaponCritChanceMod\",\"Value\":536870912},{\"Tag\":\"WeaponSlashDamageMod\",\"Value\":536870912},{\"Tag\":\"WeaponSlashDamageMod\",\"Value\":536870912}],\"curses\":[]}"),
+        1
+    );
+    assert(name == "Crita-acri-acriCritasussus");
+}

@@ -1082,19 +1082,22 @@ function parseRiven(
     }
 
     let name = "";
-    const sortedBuffs = structuredClone(fingerprint.buffs).sort((a, b) => b.Value - a.Value);
+    const sortedBuffs = structuredClone(fingerprint.buffs).sort((a, b) => {
+        if (a.Value == b.Value) {
+            return riven_tags[rivenType].find(x => x.tag == b.Tag).value - riven_tags[rivenType].find(x => x.tag == a.Tag).value;
+        }
+        return b.Value - a.Value;
+    });
     for (const buff of sortedBuffs) {
         if (buff.Tag == sortedBuffs[sortedBuffs.length - 1].Tag) {
             name += riven_tags[rivenType].find(x => x.tag == buff.Tag).suffix;
         }
-        else if (buff.Tag == sortedBuffs[1].Tag) {
-            name += riven_tags[rivenType].find(x => x.tag == buff.Tag).prefix;
-        }
         else if (buff.Tag == sortedBuffs[0].Tag) {
             name += toTitleCase(riven_tags[rivenType].find(x => x.tag == buff.Tag).prefix);
-            if (sortedBuffs.length > 2) {
-                name += "-";
-            }
+        }
+        else {
+            name += "-";
+            name += riven_tags[rivenType].find(x => x.tag == buff.Tag).prefix;
         }
     }
 
