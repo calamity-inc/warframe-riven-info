@@ -1067,17 +1067,17 @@ function parseRiven(
     }
 
     let name = "";
-    fingerprint.buffs.sort((a, b) => b.Value - a.Value);
-    for (const buff of fingerprint.buffs) {
-        if (buff.Tag == fingerprint.buffs[fingerprint.buffs.length - 1].Tag) {
+    const sortedBuffs = structuredClone(fingerprint.buffs).sort((a, b) => b.Value - a.Value);
+    for (const buff of sortedBuffs) {
+        if (buff.Tag == sortedBuffs[sortedBuffs.length - 1].Tag) {
             name += riven_tags[rivenType].find(x => x.tag == buff.Tag).suffix;
         }
-        else if (buff.Tag == fingerprint.buffs[1].Tag) {
+        else if (buff.Tag == sortedBuffs[1].Tag) {
             name += riven_tags[rivenType].find(x => x.tag == buff.Tag).prefix;
         }
-        else if (buff.Tag == fingerprint.buffs[0].Tag) {
+        else if (buff.Tag == sortedBuffs[0].Tag) {
             name += toTitleCase(riven_tags[rivenType].find(x => x.tag == buff.Tag).prefix);
-            if (fingerprint.buffs.length > 2) {
+            if (sortedBuffs.length > 2) {
                 name += "-";
             }
         }
