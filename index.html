@@ -387,7 +387,10 @@
 		function handleFingerprintUpdate() {
 			document.getElementById("fingerprint").classList.remove("is-invalid");
 			try {
-				const fingerprint = JSON.parse(JSON.parse(document.getElementById("fingerprint").value));
+				let fingerprint = JSON.parse(document.getElementById("fingerprint").value);
+				if (typeof fingerprint !== "object") {
+					fingerprint = JSON.parse(fingerprint);
+				}
 				document.getElementById("compat").value = fingerprint.compat;
 				document.getElementById("lvl").valueAsNumber = fingerprint.lvl;
 				setSelectValue(document.getElementById("polarity"), fingerprint.pol);
