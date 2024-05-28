@@ -1,4 +1,4 @@
-const { parseRiven } = require("./parser.js");
+const { parseRiven } = require("./RivenParser.js");
 
 function assert(bool) {
     if (!bool) {
