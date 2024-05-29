@@ -230,6 +230,10 @@
 					const numCurses = document.querySelectorAll("#curses .input-group").length - 1;
 					const tag = div.querySelector("select").value;
 
+					if (!tag) {
+						return;
+					}
+
 					if (div.parentNode.id == "buffs") {
 						div.querySelector(".left-value").valueAsNumber = floatToLeftValue(RivenParser.unparseBuff(
 							rivenType,
