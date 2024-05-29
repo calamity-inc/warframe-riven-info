@@ -1011,7 +1011,7 @@ function rivenIntToFloat(i) {
 }
 
 function floatToRivenInt(f) {
-    return f * 0x3FFFFFFF;
+    return Math.round(f * 0x3FFFFFFF);
 }
 
 function lerp(a, b, t) {
@@ -1143,6 +1143,21 @@ function unparseCurse(rivenType, omegaAttenuation, lvl, numBuffs, numCurses, tag
     return value;
 }
 
+function floatToGrade(value) {
+    value = lerp(-10, +10, value);
+    if (value >= +9.5) return "S";
+    if (value >= +7.5) return "A+";
+    if (value >= +5.5) return "A";
+    if (value >= +3.5) return "A-";
+    if (value >= +1.5) return "B+";
+    if (value >= -1.5) return "B";
+    if (value >= -3.5) return "B-";
+    if (value >= -5.5) return "C+";
+    if (value >= -7.5) return "C";
+    if (value >= -9.5) return "C-";
+    return "F";
+}
+
 const RivenParser = {
     riven_tags,
     rivenIntToFloat,
@@ -1151,7 +1166,8 @@ const RivenParser = {
     displayValueToValue,
     parseRiven,
     unparseBuff,
-    unparseCurse
+    unparseCurse,
+    floatToGrade,
 };
 if (typeof module != "undefined") {
     module.exports = RivenParser;

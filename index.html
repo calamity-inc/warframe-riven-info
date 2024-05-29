@@ -15,6 +15,10 @@
 		#fingerprint {
 			resize: none;
 		}
+
+		.grade {
+			min-width: 44px;
+		}
 	</style>
 </head>
 <body>
@@ -227,7 +231,7 @@
 					const tag = div.querySelector("select").value;
 
 					if (div.parentNode.id == "buffs") {
-						div.querySelector(".left-value").valueAsNumber = rivenFloatToLeftValue(RivenParser.unparseBuff(
+						div.querySelector(".left-value").valueAsNumber = floatToLeftValue(RivenParser.unparseBuff(
 							rivenType,
 							omegaAttenuation,
 							lvl,
@@ -240,7 +244,7 @@
 						updateName();
 					}
 					else {
-						div.querySelector(".left-value").valueAsNumber = rivenFloatToLeftValue(RivenParser.unparseCurse(
+						div.querySelector(".left-value").valueAsNumber = floatToLeftValue(RivenParser.unparseCurse(
 							rivenType,
 							omegaAttenuation,
 							lvl,
@@ -259,6 +263,12 @@
 					updateFingerprint(getFingerprint());
 				};
 				div.appendChild(input);
+			}
+			{
+				let span = document.createElement("span");
+				span.className = "input-group-text grade";
+				span.textContent = "B";
+				div.appendChild(span);
 			}
 			body.appendChild(div);
 		}
@@ -295,16 +305,20 @@
 			}
 		}
 
-		function leftValueToRivenInt(val) {
-			return Math.round(((val - 9000) / 2000) * 0x3FFFFFFF);
+		function leftValueToFloat(val) {
+			return ((val - 9000) / 2000);
 		}
 
-		function rivenFloatToLeftValue(val) {
+		function leftValueToRivenInt(val) {
+			return RivenParser.floatToRivenInt(leftValueToFloat(val));
+		}
+
+		function floatToLeftValue(val) {
 			return Math.round((val * 2000) + 9000);
 		}
 
 		function rivenIntToLeftValue(val) {
-			return rivenFloatToLeftValue(RivenParser.rivenIntToFloat(val));
+			return floatToLeftValue(RivenParser.rivenIntToFloat(val));
 		}
 
 		function getFingerprint() {
@@ -351,6 +365,8 @@
 			const rivenType = document.getElementById("riven-type").value;
 			const omegaAttenuation = parseFloat(document.getElementById("omega-attenuation").value);
 			location.hash = encodeURIComponent(JSON.stringify({ rivenType, omegaAttenuation, fingerprint }));
+
+			updateGrades();
 		}
 
 		function calculateStatsForward() {
@@ -382,6 +398,15 @@
 			const omegaAttenuation = parseFloat(document.getElementById("omega-attenuation").value);
 			const { name } = RivenParser.parseRiven(rivenType, fingerprint, omegaAttenuation)
 			document.getElementById("name-suffix").textContent = name;
+		}
+
+		function updateGrades() {
+			document.querySelectorAll("#buffs .input-group").forEach(buff => {
+				buff.querySelector(".grade").textContent = RivenParser.floatToGrade(leftValueToFloat(buff.querySelector(".left-value").valueAsNumber));
+			});
+			document.querySelectorAll("#curses .input-group").forEach(curse => {
+				curse.querySelector(".grade").textContent = RivenParser.floatToGrade(1.0 - leftValueToFloat(curse.querySelector(".left-value").valueAsNumber));
+			});
 		}
 
 		function handleFingerprintUpdate() {
