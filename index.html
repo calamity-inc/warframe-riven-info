@@ -167,7 +167,7 @@
 			"PlayerMeleeWeaponRandomModRare": "/Lotus/Weapons/Tenno/Melee/PlayerMeleeWeapon",
 		};
 
-		function addStatInput(body, selected, leftValue = 10000) {
+		function addStatInput(body, selected, leftValue) {
 			const rivenType = document.getElementById("riven-type").value;
 
 			let div = document.createElement("div");
@@ -271,7 +271,7 @@
 			{
 				let span = document.createElement("span");
 				span.className = "input-group-text grade";
-				span.textContent = "B";
+				span.textContent = "S";
 				div.appendChild(span);
 			}
 			body.appendChild(div);
@@ -279,11 +279,11 @@
 
 		function resetForRivenTypeChange() {
 			document.getElementById("buffs").innerHTML = "";
-			addStatInput(document.getElementById("buffs"), "WeaponCritChanceMod");
-			addStatInput(document.getElementById("buffs"), "WeaponCritDamageMod");
-			addStatInput(document.getElementById("buffs"), "");
+			addStatInput(document.getElementById("buffs"), "WeaponCritChanceMod", 11000);
+			addStatInput(document.getElementById("buffs"), "WeaponCritDamageMod", 11000);
+			addStatInput(document.getElementById("buffs"), "", 11000);
 			document.getElementById("curses").innerHTML = "";
-			addStatInput(document.getElementById("curses"), "");
+			addStatInput(document.getElementById("curses"), "", 9000);
 
 			const rivenType = document.getElementById("riven-type").value;
 			document.getElementById("compat").value = mostGenericCompat[rivenType];
@@ -302,10 +302,10 @@
 
 			// Add empty stat if it's missing now
 			if (document.querySelector("#buffs .input-group:last-child select").value) {
-				addStatInput(document.getElementById("buffs"), "");
+				addStatInput(document.getElementById("buffs"), "", 11000);
 			}
 			if (document.querySelector("#curses .input-group:last-child select").value) {
-				addStatInput(document.getElementById("curses"), "");
+				addStatInput(document.getElementById("curses"), "", 9000);
 			}
 		}
 
@@ -427,14 +427,14 @@
 				document.getElementById("rerolls").valueAsNumber = fingerprint.rerolls;
 				document.getElementById("buffs").innerHTML = "";
 				fingerprint.buffs.forEach(buff => {
-					addStatInput(document.getElementById("buffs"), buff.Tag, rivenIntToLeftValue(buff.Value));
+					addStatInput(document.getElementById("buffs"), buff.Tag, rivenIntToLeftValue(buff.Value), 11000);
 				});
-				addStatInput(document.getElementById("buffs"), "");
+				addStatInput(document.getElementById("buffs"), "", 11000);
 				document.getElementById("curses").innerHTML = "";
 				fingerprint.curses.forEach(curse => {
-					addStatInput(document.getElementById("curses"), curse.Tag, rivenIntToLeftValue(curse.Value));
+					addStatInput(document.getElementById("curses"), curse.Tag, rivenIntToLeftValue(curse.Value), 9000);
 				});
-				addStatInput(document.getElementById("curses"), "");
+				addStatInput(document.getElementById("curses"), "", 9000);
 				calculateStatsForward();
 			}
 			catch (e) {
