@@ -459,6 +459,10 @@
 			calculateStatsForward();
 		};
 
+		document.getElementById("compat").oninput = function() {
+			updateFingerprint(getFingerprint());
+		};
+
 		document.getElementById("polarity").oninput = function() {
 			updateFingerprint(getFingerprint());
 		};
