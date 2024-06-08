@@ -1022,14 +1022,14 @@ const numBuffsAtten = [0, 1, .66000003, .5, .40000001, .34999999];
 const numBuffsCurseAtten = [0, 1, .33000001, .5, 1.25, 1.5];
 
 function valueToDisplayValue(tag, value) {
-    if (tag == "WeaponMeleeComboInitialBonusMod") {
+    if (tag == "WeaponMeleeComboInitialBonusMod" || tag == "ComboDurationMod" || tag == "WeaponMeleeRangeIncMod") {
         return Math.round(value * 10) / 10;
     }
     return Math.round(value * 1000) / 10;
 }
 
 function displayValueToValue(tag, displayValue) {
-    if (tag == "WeaponMeleeComboInitialBonusMod") {
+    if (tag == "WeaponMeleeComboInitialBonusMod" || tag == "ComboDurationMod" || tag == "WeaponMeleeRangeIncMod") {
         return displayValue;
     }
     return displayValue / 100;
