@@ -1145,17 +1145,20 @@ function unparseCurse(rivenType, omegaAttenuation, lvl, numBuffs, numCurses, tag
 
 function floatToGrade(value) {
     value = lerp(-10, +10, value);
-    if (value >= +9.5) return "S";
-    if (value >= +7.5) return "A+";
-    if (value >= +5.5) return "A";
-    if (value >= +3.5) return "A-";
-    if (value >= +1.5) return "B+";
-    if (value >= -1.5) return "B";
-    if (value >= -3.5) return "B-";
-    if (value >= -5.5) return "C+";
-    if (value >= -7.5) return "C";
-    if (value >= -9.5) return "C-";
-    return "F";
+    if (value >= -11.5 && value <= +11.5) {
+        if (value >= +9.5) return "S";
+        if (value >= +7.5) return "A+";
+        if (value >= +5.5) return "A";
+        if (value >= +3.5) return "A-";
+        if (value >= +1.5) return "B+";
+        if (value >= -1.5) return "B";
+        if (value >= -3.5) return "B-";
+        if (value >= -5.5) return "C+";
+        if (value >= -7.5) return "C";
+        if (value >= -9.5) return "C-";
+        return "F";
+    }
+    return "X";
 }
 
 const RivenParser = {
