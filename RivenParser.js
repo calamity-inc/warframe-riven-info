@@ -1162,6 +1162,7 @@ const RivenParser = {
     riven_tags,
     rivenIntToFloat,
     floatToRivenInt,
+    lerp,
     valueToDisplayValue,
     displayValueToValue,
     parseRiven,
