@@ -74,20 +74,20 @@ function assert(bool) {
 
 {
     const { name } = parseRiven(
-        "PlayerMeleeWeaponRandomModRare",
-        JSON.parse("{\"compat\":\"/Lotus/Weapons/Tenno/Melee/Glaives/LightGlaive/LightGlaiveWeapon\",\"lim\":0,\"lvlReq\":0,\"lvl\":8,\"rerolls\":69420,\"pol\":\"AP_DEFENSE\",\"buffs\":[{\"Tag\":\"WeaponFireRateMod\",\"Value\":0},{\"Tag\":\"WeaponMeleeDamageMod\",\"Value\":1073741823}],\"curses\":[{\"Tag\":\"WeaponSlashDamageMod\",\"Value\":1073741823}]}"),
+        "LotusRifleRandomModRare",
+        JSON.parse("{\"compat\":\"/Lotus/Weapons/Tenno/Rifle/LotusRifle\",\"lim\":0,\"lvl\":8,\"lvlReq\":0,\"rerolls\":1337,\"pol\":\"AP_ANY\",\"buffs\":[{\"Tag\":\"WeaponCritChanceMod\",\"Value\":536870912},{\"Tag\":\"WeaponCritDamageMod\",\"Value\":536870912}],\"curses\":[]}"),
         1
     );
-    assert(name == "Visidra");
+    assert(name == "Acricron");
 }
 
 {
     const { name } = parseRiven(
         "PlayerMeleeWeaponRandomModRare",
-        JSON.parse("{\"compat\":\"/Lotus/Weapons/Tenno/Melee/PlayerMeleeWeapon\",\"lim\":0,\"lvl\":8,\"lvlReq\":0,\"rerolls\":1337,\"pol\":\"AP_ANY\",\"buffs\":[{\"Tag\":\"WeaponCritDamageMod\",\"Value\":1073741823},{\"Tag\":\"WeaponCritChanceMod\",\"Value\":1073741823},{\"Tag\":\"WeaponMeleeDamageMod\",\"Value\":536870912},{\"Tag\":\"WeaponArmorPiercingDamageMod\",\"Value\":536870912},{\"Tag\":\"WeaponImpactDamageMod\",\"Value\":536870912}],\"curses\":[]}"),
+        JSON.parse("{\"compat\":\"/Lotus/Weapons/Tenno/Melee/PlayerMeleeWeapon\",\"lim\":0,\"lvl\":8,\"lvlReq\":0,\"rerolls\":1337,\"pol\":\"AP_ANY\",\"buffs\":[{\"Tag\":\"WeaponCritChanceMod\",\"Value\":1073741823},{\"Tag\":\"WeaponCritDamageMod\",\"Value\":536870912},{\"Tag\":\"WeaponCritDamageMod\",\"Value\":536870912},{\"Tag\":\"WeaponSlashDamageMod\",\"Value\":0}],\"curses\":[]}"),
         1
     );
-    assert(name == "Crita-acri-visi-insiton");
+    assert(name == "Crita-acri-acrisus");
 }
 
 {
@@ -96,5 +96,15 @@ function assert(bool) {
         JSON.parse("{\"compat\":\"/Lotus/Weapons/Tenno/Melee/PlayerMeleeWeapon\",\"lim\":0,\"lvl\":8,\"lvlReq\":0,\"rerolls\":1337,\"pol\":\"AP_ANY\",\"buffs\":[{\"Tag\":\"WeaponCritDamageMod\",\"Value\":1073741823},{\"Tag\":\"WeaponCritDamageMod\",\"Value\":1073741823},{\"Tag\":\"WeaponCritChanceMod\",\"Value\":1073741823},{\"Tag\":\"WeaponCritChanceMod\",\"Value\":536870912},{\"Tag\":\"WeaponSlashDamageMod\",\"Value\":536870912},{\"Tag\":\"WeaponSlashDamageMod\",\"Value\":536870912}],\"curses\":[]}"),
         1
     );
-    assert(name == "Crita-acri-acriCritasussus");
+    assert(name == "AcriAcri-crita-critasussus"); // WeaponCritDamageMod, WeaponCritChanceMod, WeaponSlashDamageMod
 }
+
+// This one makes no sense to me right now
+/*{
+    const { name } = parseRiven(
+        "PlayerMeleeWeaponRandomModRare",
+        JSON.parse("{\"compat\":\"/Lotus/Weapons/Tenno/Melee/PlayerMeleeWeapon\",\"lim\":0,\"lvl\":8,\"lvlReq\":0,\"rerolls\":1337,\"pol\":\"AP_ANY\",\"buffs\":[{\"Tag\":\"WeaponMeleeDamageMod\",\"Value\":1073741823},{\"Tag\":\"WeaponCritChanceMod\",\"Value\":1073741823},{\"Tag\":\"WeaponCritDamageMod\",\"Value\":1073741823},{\"Tag\":\"WeaponStunChanceMod\",\"Value\":1073741823}],\"curses\":[]}"),
+        1
+    );
+    assert(name == "Acri-crita-visidex"); // WeaponCritDamageMod, WeaponCritChanceMod, WeaponMeleeDamageMod, WeaponStunChanceMod
+}*/

@@ -1044,9 +1044,10 @@ function parseRiven(
     fingerprint,
     omegaAttenuation // the weapon's riven disposition
 ) {
-    const curseAtten = Math.pow(1.25, fingerprint.curses.length);
+    const stats = [];
+    const buffTags = {};
 
-    let stats = [];
+    const curseAtten = Math.pow(1.25, fingerprint.curses.length);
 
     let attenuation = 1;
     attenuation *= 1.5; // SPECIFIC_FIT_ATTENUATION
@@ -1054,6 +1055,7 @@ function parseRiven(
     attenuation *= 10; // getBaseDrain(RIVEN_BASE_DRAIN)
 
     for (const buff of fingerprint.buffs) {
+        buffTags[buff.Tag] = Math.max(buffTags[buff.Tag] ?? 0, buff.Value);
         let upgradeValue = riven_tags[rivenType].find(x => x.tag == buff.Tag).value;
         upgradeValue *= attenuation;
         upgradeValue *= curseAtten;
@@ -1083,10 +1085,12 @@ function parseRiven(
 
     let name = "";
     const sortedBuffs = structuredClone(fingerprint.buffs).sort((a, b) => {
-        if (a.Value == b.Value) {
-            return riven_tags[rivenType].find(x => x.tag == b.Tag).value - riven_tags[rivenType].find(x => x.tag == a.Tag).value;
+        if (buffTags[a.Tag] == buffTags[b.Tag]) {
+            const aTagValue = riven_tags[rivenType].find(x => x.tag == a.Tag).value;
+            const bTagValue = riven_tags[rivenType].find(x => x.tag == b.Tag).value;
+            return aTagValue - bTagValue;
         }
-        return b.Value - a.Value;
+        return buffTags[b.Tag] - buffTags[a.Tag];
     });
     for (const buff of sortedBuffs) {
         if (buff.Tag == sortedBuffs[sortedBuffs.length - 1].Tag) {
