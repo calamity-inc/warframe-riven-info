@@ -1044,6 +1044,8 @@ function parseRiven(
     fingerprint,
     omegaAttenuation // the weapon's riven disposition
 ) {
+    fingerprint.curses ??= []; // somewhat-gracefully deal with a malformed riven
+
     const stats = [];
     const buffTags = {};
 
